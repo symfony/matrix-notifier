@@ -16,7 +16,7 @@ use Symfony\Component\Notifier\Message\MessageOptionsInterface;
 /**
  * @author Frank Schulze <frank@akiber.de>
  */
-final class MatrixOptions implements MessageOptionsInterface, \JsonSerializable
+final class MatrixOptions implements MessageOptionsInterface
 {
     public function __construct(
         private array $options = [],
@@ -31,10 +31,5 @@ final class MatrixOptions implements MessageOptionsInterface, \JsonSerializable
     public function getRecipientId(): ?string
     {
         return $this->options['recipient_id'] ?? null;
-    }
-
-    public function jsonSerialize(): mixed
-    {
-        return $this->options;
     }
 }

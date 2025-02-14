@@ -33,14 +33,4 @@ class MatrixOptionsTest extends TestCase
         ]);
         $this->assertSame('@testuser:matrix.io', $options->getRecipientId());
     }
-
-    public function testJsonSerialize()
-    {
-        $options = new MatrixOptions([
-            'recipient_id' => '@testuser:matrix.io',
-            'msgtype' => 'm.text',
-            'format' => 'org.matrix.custom.html',
-        ]);
-        $this->assertSame(['recipient_id' => '@testuser:matrix.io', 'msgtype' => 'm.text', 'format' => 'org.matrix.custom.html'], $options->jsonSerialize());
-    }
 }
