@@ -169,7 +169,7 @@ final class MatrixTransport extends AbstractTransport
             throw new TransportException('Could not reach the Matrix server.', $response, 0, $e);
         }
 
-        if (\in_array($statusCode, [400, 403, 405])) {
+        if (\in_array($statusCode, [400, 403, 405], true)) {
             $result = $response->toArray(false);
             throw new TransportException(\sprintf('Error: Matrix responded with "%s (%s)"', $result['error'], $result['errcode']), $response);
         }
